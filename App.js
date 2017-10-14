@@ -9,6 +9,27 @@ class GreetingPupuru extends Component {
   }
 }
 
+class BlinkPupuru extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {showText: true};
+
+    // Toggle the state every second
+    setInterval(() => {
+      this.setState(previousState => {
+        return { showText: !previousState.showText };
+      });
+    }, 1000);
+  }
+
+  render() {
+    let display = this.state.showText ? this.props.text : ' ';
+    return (
+      <Text>{display}</Text>
+    );
+  }
+}
+
 export default class App extends Component {
   render() {
     let pic = {
@@ -19,6 +40,7 @@ export default class App extends Component {
         <Text>Hello world Pupuru Moshi-moshi! Molapiyo ... There was once a lonely wolf that is hunting alone in the deep dark forest.</Text>
         <Image source={pic} style={{width: 193, height: 110}} />
         <GreetingPupuru name='Jon Snow' class='Night Watch Ranger' />
+        <BlinkPupuru text='Holapiyo mola-molapiyo' />
       </View>
     );
   }
