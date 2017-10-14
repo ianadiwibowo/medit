@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AppRegistry, Image, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Alert, AppRegistry, Button, Image, Platform, StyleSheet, Text, TextInput, TouchableHighlight, TouchableOpacity, ToucheableNativeFeedback, ToucheableWithoutFeedback, View } from 'react-native';
 
 class GreetingPupuru extends Component {
   render() {
@@ -31,6 +31,14 @@ class BlinkPupuru extends Component {
 }
 
 export default class App extends Component {
+  _onPressButton() {
+    Alert.alert('You tapped the button!')
+  }
+
+  _onLongPressButton() {
+    Alert.alert('You long-pressed the button!')
+  }
+
   constructor(props) {
     super(props);
     this.state = {text: ''};
@@ -42,6 +50,16 @@ export default class App extends Component {
     };
     return (
       <View style={styles.container}>
+        <TouchableHighlight onPress={this._onPressButton} underlayColor="white">
+          <View style={styles.button}>
+            <Text style={styles.buttonText}>TouchableHighlight</Text>
+          </View>
+        </TouchableHighlight>
+        <Button
+          onPress={() => { Alert.alert('You tapped the button!') }}
+          title="Press me"
+          color="powderblue"
+        />
         <TextInput style={{height: 40}} placeholder='Type here to translate!' onChangeText={(text) => this.setState({text})}></TextInput>
         <Text style={{padding: 10, fontSize: 20}}>{this.state.text + ' pupuru'}</Text>
         <Text>Hello world Pupuru Moshi-moshi! Molapiyo ... There was once a lonely wolf that is hunting alone in the deep dark forest.</Text>
@@ -66,14 +84,23 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    padding: 10,
+    padding: 20
   },
   bigblue: {
     color: 'blue',
     fontWeight: 'bold',
-    fontSize: 30,
+    fontSize: 30
   },
   red: {
-    color: 'red',
+    color: 'red'
   },
+  button: {
+    marginBottom: 30,
+    alignItems: 'center',
+    backgroundColor: '#2196F3'
+  },
+  buttonText: {
+    padding: 20,
+    color: 'white'
+  }
 });
