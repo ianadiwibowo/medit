@@ -41,6 +41,10 @@ export default class App extends Component {
         <Image source={pic} style={{width: 193, height: 110}} />
         <GreetingPupuru name='Jon Snow' class='Night Watch Ranger' />
         <BlinkPupuru text='Holapiyo mola-molapiyo' />
+        <Text style={styles.red}>Just Red</Text>
+        <Text style={styles.bigblue}>Just Big Blue</Text>
+        <Text style={[styles.bigblue, styles.red]}>Big Blue, then Red</Text>
+        <Text style={[styles.red, styles.bigblue]}>Red, then Big Blue</Text>
       </View>
     );
   }
@@ -52,5 +56,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  bigblue: {
+    color: 'blue',
+    fontWeight: 'bold',
+    fontSize: 30,
+  },
+  red: {
+    color: 'red',
   },
 });
