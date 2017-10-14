@@ -45,6 +45,9 @@ export default class App extends Component {
         <Text style={styles.bigblue}>Just Big Blue</Text>
         <Text style={[styles.bigblue, styles.red]}>Big Blue, then Red</Text>
         <Text style={[styles.red, styles.bigblue]}>Red, then Big Blue</Text>
+        <View style={{width: 50, height: 50, backgroundColor: 'powderblue'}} />
+        <View style={{width: 100, height: 100, backgroundColor: 'skyblue'}} />
+        <View style={{width: 150, height: 150, backgroundColor: 'steelblue'}} />
       </View>
     );
   }
