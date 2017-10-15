@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Alert, AppRegistry, Button, Image, Platform, StyleSheet, Text, TextInput, TouchableHighlight, TouchableOpacity, TouchableNativeFeedback, TouchableWithoutFeedback, View } from 'react-native';
+import { Alert, AppRegistry, Button, Image, Platform, ScrollView, StyleSheet, Text, TextInput, TouchableHighlight, TouchableOpacity, TouchableNativeFeedback, TouchableWithoutFeedback, View } from 'react-native';
 
 class GreetingPupuru extends Component {
   render() {
@@ -49,7 +49,7 @@ export default class App extends Component {
       uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg'
     };
     return (
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         <TouchableHighlight onPress={this._onPressButton} underlayColor="white">
           <View style={styles.button}>
             <Text style={styles.buttonText}>TouchableHighlight</Text>
@@ -95,7 +95,7 @@ export default class App extends Component {
           <View style={{flex: 2, backgroundColor: 'skyblue'}} />
           <View style={{flex: 1, backgroundColor: 'steelblue'}} />
         </View>
-      </View>
+      </ScrollView>
     );
   }
 }
