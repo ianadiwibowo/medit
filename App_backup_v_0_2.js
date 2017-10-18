@@ -1,17 +1,6 @@
 import React, { Component } from 'react';
 import { AppRegistry, FlatList, SectionList, StyleSheet, Text, View } from 'react-native';
 
-async function getMoviesFromApi() {
-  try {
-    let response = await fetch('https://facebook.github.io/react-native/movies.json');
-    let responseJson = await response.json();
-    return responseJson.movies;
-  }
-  catch (error) {
-    console.log(error);
-  }
-}
-
 export default class App extends Component {
   render() {
     return (
